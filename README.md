@@ -19,10 +19,17 @@
   * login, join
   * session
   * validation
-* board
+* boards
   * CRUD 
-* reply
+  * pagination
+  * search
+  * reply
 
+## Getting started - DB setting
+```
+create database board;
+use board;
+```
 ## 🛕STRUCTURE
 ```
 -- 초기화
