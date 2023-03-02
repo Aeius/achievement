@@ -1,0 +1,19 @@
+@charset "UTF-8";
+.carousel{
+    width: 800px;
+    height: 100px;
+    overflow: hidden;
+}
+.carousel>ul{
+	width: 1000px;
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+.carousel>ul>li{
+    float: left;
+}
+.carousel>ul>li>img{
+    width: 200px;
+    height: 100px;
+}
