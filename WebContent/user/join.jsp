@@ -23,6 +23,66 @@
 	margin: 10px;
 }
 </style>
+</head>
+<body>
+<%@ include file="../template/header.jsp" %>
+<%@ include file="../template/menu2.jsp" %>
+
+<div class="content">
+<h1>회원가입</h1>
+<form action="join.do" method="post">
+<table>
+	<tbody>
+	<tr>
+		<td>학번</td>
+		<td>
+			<input type="text" name="num" id="num" required="required" maxlength="8">
+		</td>
+	</tr>
+	<tr>
+		<td>이름</td>
+		<td>
+			<input type="text" name="name" id="name" required="required">
+		</td>
+	</tr>
+	<tr>
+		<td>패스워드</td>
+		<td>
+			<input type="password" name="pw" id="pw" required="required">
+		</td>
+	</tr>
+	<tr>
+		<td>패스워드 재입력</td>
+		<td>
+			<input type="password" name="re" id="re" required="required">
+		</td>
+	</tr>
+	<tr>
+		<td>역할</td>
+		<td>
+			<select name="job">
+				<option value="학생">학생</option>
+				<option value="교수">교수</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<button type="submit">회원가입</button>
+			<button type="reset">다시작성</button>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<a href="login.do">로그인하러가기</a>
+		</td>
+	</tr>
+	</tbody>
+</table>
+</form>
+</div>
+<%@ include file="../template/footer.jsp"%>
+</body>
 <%
 String joinResult = String.valueOf(session.getAttribute("joinResult"));
 if(joinResult=="false"){
@@ -34,7 +94,7 @@ if(joinResult=="false"){
 } else if(joinResult=="true"){
 	%>
 	<script type="text/javascript">
-		location.href="/jaehyeon/user/login.do";
+		location.href="<%=root%>/user/login.do";
 	</script>
 	<%
 }
@@ -110,64 +170,4 @@ function checkMsg(msg){
 	return msg;
 }
 </script>
-</head>
-<body>
-<%@ include file="../template/header.jsp" %>
-<%@ include file="../template/menu2.jsp" %>
-
-<div class="content">
-<h1>회원가입</h1>
-<form action="join.do" method="post">
-<table>
-	<tbody>
-	<tr>
-		<td>학번</td>
-		<td>
-			<input type="text" name="num" id="num" required="required" maxlength="8">
-		</td>
-	</tr>
-	<tr>
-		<td>이름</td>
-		<td>
-			<input type="text" name="name" id="name" required="required">
-		</td>
-	</tr>
-	<tr>
-		<td>패스워드</td>
-		<td>
-			<input type="password" name="pw" id="pw" required="required">
-		</td>
-	</tr>
-	<tr>
-		<td>패스워드 재입력</td>
-		<td>
-			<input type="password" name="re" id="re" required="required">
-		</td>
-	</tr>
-	<tr>
-		<td>역할</td>
-		<td>
-			<select name="job">
-				<option value="학생">학생</option>
-				<option value="교수">교수</option>
-			</select>
-		</td>
-	</tr>
-	<tr>
-		<td colspan="2">
-			<button type="submit">회원가입</button>
-			<button type="reset">다시작성</button>
-		</td>
-	</tr>
-	<tr>
-		<td colspan="2">
-			<a href="login.do">로그인하러가기</a>
-		</td>
-	</tr>
-	</tbody>
-</table>
-</form>
-</div>
-<%@ include file="../template/footer.jsp"%>
-</body>
 </html>
